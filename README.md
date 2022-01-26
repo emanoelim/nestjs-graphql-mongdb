@@ -8,6 +8,7 @@ Projeto do curso https://www.udemy.com/course/nestjs-zero-to-hero/.
 * Rodar projeto: npm run start:dev
 * Playground: http://127.0.0.1:3000/graphql
 * Exemplos:
+
 ```
 mutation {
   createLesson(
@@ -17,9 +18,9 @@ mutation {
       endDate: "2022-01-04T15:30:00Z"
     }
   ) {
-    id,
-    name,
-    startDate,
+    id
+    name
+    startDate
     endDate
   }
 }
@@ -68,6 +69,24 @@ query {
     id
     firstName
     lastName
+  }
+}
+
+mutation {
+  assignStudentsToLesson(
+    assignStudentsToLessonInput: {
+      lessonId: "18ba00d7-9528-4e46-8e41-f40282278c5e",
+      studentsIds: [
+        "7d5babc0-8dd6-4403-816d-0da78974445a",
+        "8db894bc-80f8-4909-8c22-98863cf09e54",
+        "b0ea495e-b28d-4490-92af-f8734e03dcef",
+      ]
+    }
+  ) {
+    id
+    name
+    startDate
+    endDate
   }
 }
 ```
