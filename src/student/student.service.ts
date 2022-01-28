@@ -28,4 +28,14 @@ export class StudentService {
         });
         return this.studentRepository.save(student);
     }
+
+    async getStudentsByIds(studentsIds: string[]): Promise<Student[]> {
+        return this.studentRepository.find({
+            where: { // sintaxe mongo
+                id: {
+                    $in: studentsIds,
+                }
+            }
+        });
+    }
 }

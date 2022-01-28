@@ -87,6 +87,10 @@ mutation {
     name
     startDate
     endDate
+    students {
+      firstName
+      lastName
+    }
   }
 }
 ```
